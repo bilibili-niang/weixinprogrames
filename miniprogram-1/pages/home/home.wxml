@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<view>
+  <!-- 轮播图 -->
+  <!-- 
+添加滚动的小圆点:
+indicator-dots
+
+开启无限滚动:
+circular
+ -->
+  <swiper indicator-dots circular>
+    <swiper-item wx:for="{{swiperlist}}" wx:key="id">
+      <image src="{{item.image}}">
+      </image>
+    </swiper-item>
+
+  </swiper>
+  <!-- 九宫格区域 -->
+  <view class="grid-list">
+    <view class="grid-item" wx:for="{{gridList}}" wx:key="id">
+
+      <image src="{{item.icon}}"></image>
+      <text>
+        {{item.name}}
+      </text>
+
+    </view>
+  </view>
+
+  <!-- 图片区域 -->
+  <view class="img-box">
+    <image src="/images/R-C.jpg" mode="widthFix"></image>
+    <image src="/images/wallhaven-1kdly9_3840x1600.png" mode="widthFix"></image>
+  </view>
+
+
+</view>

@@ -1,0 +1,38 @@
+<!--pages/home/home.wxml-->
+<view>
+  <!-- 轮播图 -->
+  <!-- 
+添加滚动的小圆点:
+indicator-dots
+
+开启无限滚动:
+circular
+ -->
+  <swiper indicator-dots circular>
+    <swiper-item wx:for="{{swiperlist}}" wx:key="id">
+      <image src="{{item.image}}">
+      </image>
+    </swiper-item>
+
+  </swiper>
+  <!-- 九宫格区域 -->
+  <view class="grid-list">
+    <navigator class="grid-item" wx:for="{{gridList}}" wx:key="id" url="/pages/shoplist/shoplist?id={{item.id}}&title={{item.name}}">
+      <image src="{{item.icon}}"></image>
+      <text>
+        {{item.name}}
+      </text>
+    </navigator>
+  </view>
+
+  <!-- 图片区域 -->
+  <view class="img-box">
+    <image src="/images/R-C.jpg" mode="widthFix"></image>
+    <image src="/images/wallhaven-1kdly9_3840x1600.png" mode="widthFix"></image>
+  </view>
+
+  <text>
+    页面跳转的demo
+  </text>
+  <navigator url="/pages/message/message" open-type="switchTab">导航到message循环页</navigator>
+</view>
